@@ -1,0 +1,115 @@
+{
+  "@@locale": "en",
+
+  "water": "Water",
+  "@water": { "description": "Label for water metric" },
+  "sleep": "Sleep",
+  "@sleep": { "description": "Label for sleep metric" },
+  "calories": "Calories",
+  "@calories": { "description": "Label for calorie metric" },
+
+  "settings": "Settings",
+  "@settings": { "description": "Screen title for Settings page" },
+  "theme": "Theme",
+  "@theme": { "description": "Label for theme selection" },
+  "darkMode": "Dark Mode",
+  "@darkMode": { "description": "Toggle for dark mode" },
+  "lightMode": "Light Mode",
+  "@lightMode": { "description": "Toggle for light mode" },
+
+  "language": "Language",
+  "@language": { "description": "Label for language selection" },
+  "home": "Home",
+  "@home": { "description": "Bottom nav item: Home" },
+  "statistics": "Statistics",
+  "@statistics": { "description": "Bottom nav item: Statistics" },
+  "challenges": "Challenges",
+  "@challenges": { "description": "Bottom nav item & screen title: Challenges" },
+  "achievements": "Achievements",
+  "@achievements": { "description": "Bottom nav item: Achievements" },
+  "profile": "Profile",
+  "@profile": { "description": "Bottom nav item: Profile" },
+
+  "notifications": "Notifications",
+  "@notifications": { "description": "Toggle for enabling notifications" },
+  "resetSettings": "Reset Settings",
+  "@resetSettings": { "description": "Reset all settings to default" },
+  "version": "Version",
+  "@version": { "description": "App version label" },
+  "logout": "Logout",
+  "@logout": { "description": "Sign‑out button label" },
+
+  "name": "Name",
+  "@name": { "description": "Label for user name setting" },
+  "enterName": "Enter name",
+  "@enterName": { "description": "Dialog title for entering name" },
+  "cancel": "Cancel",
+  "@cancel": { "description": "Button label to cancel" },
+  "save": "Save",
+  "@save": { "description": "Button label to save changes" },
+
+  "editGoals": "Edit goals",
+  "@editGoals": { "description": "Subtitle for editing challenge goals in Settings" },
+
+  "goodMorning": "Good morning,",
+  "@goodMorning": { "description": "Greeting on Home page" },
+  "dailySummary": "Daily Summary",
+  "@dailySummary": { "description": "Section title on Home page" },
+  "cups": "cups",
+  "@cups": { "description": "Unit for cups of water" },
+  "hours": "hours",
+  "@hours": { "description": "Unit for hours of sleep" },
+
+  "nameNotSet": "Name not set",
+  "@nameNotSet": { "description": "Placeholder text when user name is not set" },
+  "nameUpdated": "Name updated successfully!",
+  "@nameUpdated": { "description": "Snackbar message after successfully updating name" },
+  "confirmResetSettings": "Are you sure you want to reset all settings to their defaults?",
+  "@confirmResetSettings": { "description": "Confirmation message for resetting settings" },
+  "reset": "Reset",
+  "@reset": { "description": "Button label to confirm reset" },
+  "settingsReset": "Settings have been reset!",
+  "@settingsReset": { "description": "Snackbar message after settings have been reset" },
+  "confirmLogout": "Are you sure you want to log out?",
+  "@confirmLogout": { "description": "Confirmation message for logging out" },
+  "goalsUpdated": "Goals updated successfully!",
+  "@goalsUpdated": { "description": "Snackbar message after goals have been updated" },
+
+  "waterUnit": "glasses",
+  "@waterUnit": { "description": "Unit for water goal, e.g., 8 glasses" },
+  "stepsUnit": "steps",
+  "@stepsUnit": { "description": "Unit for steps goal, e.g., 10000 steps" },
+  "sleepUnit": "hours",
+  "@sleepUnit": { "description": "Unit for sleep goal, e.g., 8 hours" },
+
+  "goalWaterTitle": "Drink {count} glasses",
+  "@goalWaterTitle": {
+    "description": "Title for water goal with a placeholder for the count",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "8"
+      }
+    }
+  },
+  "goalStepsTitle": "Walk {count} steps",
+  "@goalStepsTitle": {
+    "description": "Title for steps goal with a placeholder for the count",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "10000"
+      }
+    }
+  },
+  "goalSleepTitle": "Sleep {count} hours",
+  "@goalSleepTitle": {
+    "description": "Title for sleep goal with a placeholder for the count",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "8"
+      }
+    }
+  }
+}
