@@ -11,7 +11,7 @@ import '../providers/settings_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChallengesPage extends StatelessWidget {
-  const ChallengesPage({Key? key}) : super(key: key);
+  const ChallengesPage({super.key});
 
   static const List<Challenge> _defaultChallenges = [
     Challenge(

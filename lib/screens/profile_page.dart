@@ -1,8 +1,35 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import '../models/user.dart';
+
+class User {
+  final int id;
+  final String name;
+  final String email;
+
+  User({
+    required this.id,
+    required this.name,
+    required this.email,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      id: json['id'],
+      name: json['name'],
+      email: json['email'],
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+    'email': email,
+  };
+}
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -14,9 +41,10 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  String? _savedName;
+
   List<User> _usersFromAPI = [];
   String? _error;
+  String? _savedName;
 
   @override
   void initState() {
@@ -27,44 +55,71 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Future<void> _loadUserData() async {
     final prefs = await SharedPreferences.getInstance();
-    setState(() {
-      _savedName = prefs.getString('name');
-      _nameController.text = prefs.getString('name') ?? '';
-      _emailController.text = prefs.getString('email') ?? '';
-    });
+    _nameController.text = prefs.getString('name') ?? '';
+    _emailController.text = prefs.getString('email') ?? '';
+    _savedName = prefs.getString('name');
+
+    final file = await _getLocalFile();
+    if (await file.exists()) {
+      final contents = await file.readAsString();
+      try {
+        final jsonData = jsonDecode(contents);
+        final user = User.fromJson(jsonData);
+        setState(() {
+          _nameController.text = user.name;
+          _emailController.text = user.email;
+          _savedName = user.name;
+        });
+      } catch (e) {
+        // Если JSON испорчен, ничего не делаем
+      }
+    }
   }
+
 
   Future<void> _saveUserData() async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('name', _nameController.text);
-    await prefs.setString('email', _emailController.text);
+    final name = _nameController.text;
+    final email = _emailController.text;
+
+    await prefs.setString('name', name);
+    await prefs.setString('email', email);
+
     setState(() {
-      _savedName = _nameController.text;
+      _savedName = name;
     });
 
-    User user = User(id: 1, name: _nameController.text, email: _emailController.text);
-    String jsonString = jsonEncode(user.toJson());
-    User restoredUser = User.fromJson(jsonDecode(jsonString));
-    print('Serialized JSON: $jsonString');
-    print('Deserialized User: ${restoredUser.name}, ${restoredUser.email}');
+    // Save to local JSON file
+    final user = User(id: 1, name: name, email: email);
+    final jsonString = jsonEncode(user.toJson());
+    final file = await _getLocalFile();
+    await file.writeAsString(jsonString);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('User data saved')),
+      const SnackBar(content: Text('User data saved locally')),
     );
+  }
+
+  Future<File> _getLocalFile() async {
+    final dir = await getApplicationDocumentsDirectory();
+    return File('${dir.path}/user_data.json');
   }
 
   Future<void> _fetchUsersFromAPI() async {
     try {
-      final response = await http.get(Uri.parse('https://reqres.in/api/users'));
+      final response =
+      await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
 
       if (response.statusCode == 200) {
-        final List<dynamic> jsonData = jsonDecode(response.body);
-        final users = jsonData.map((e) => User.fromJson(e)).toList();
+        final List<dynamic> usersJson = jsonDecode(response.body);
+        final users = usersJson.map((e) => User.fromJson(e)).toList();
+
         setState(() {
           _usersFromAPI = users;
+          _error = null;
         });
       } else {
-        throw Exception('API error');
+        throw Exception('Failed to load users');
       }
     } catch (e) {
       setState(() {
@@ -84,6 +139,7 @@ class _ProfilePageState extends State<ProfilePage> {
             if (_savedName != null)
               Text('Welcome back, $_savedName!',
                   style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 10),
             TextField(
               controller: _nameController,
               decoration: const InputDecoration(labelText: 'Name'),

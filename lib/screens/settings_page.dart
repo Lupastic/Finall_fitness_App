@@ -178,8 +178,8 @@ class SettingsPage extends StatelessWidget {
                           child: Text(loc.cancel)),
                       TextButton(
                         onPressed: () => Navigator.pop(ctx, true),
-                        child: Text(loc.reset ?? 'Reset'),
                         style: TextButton.styleFrom(foregroundColor: Colors.red),
+                        child: Text(loc.reset ?? 'Reset'),
                       ),
                     ],
                   )
@@ -235,8 +235,8 @@ class SettingsPage extends StatelessWidget {
                           child: Text(loc.cancel)),
                       TextButton(
                         onPressed: () => Navigator.pop(ctx, true),
-                        child: Text(loc.logout),
                         style: TextButton.styleFrom(foregroundColor: Colors.red),
+                        child: Text(loc.logout),
                       ),
                     ],
                   )
@@ -266,7 +266,7 @@ class SettingsPage extends StatelessWidget {
 //                          Bottom‑sheet для целей
 // ---------------------------------------------------------------------------
 class _GoalsSheet extends StatefulWidget {
-  const _GoalsSheet({super.key});
+  const _GoalsSheet();
 
   @override
   State<_GoalsSheet> createState() => _GoalsSheetState();
@@ -401,28 +401,28 @@ class _GoalsSheetState extends State<_GoalsSheet> {
               loc: loc,
               goalKey: 'water',
               controller: _waterCtrl,
-              titleBuilder: (c) => loc.goalWaterTitle?.call(c) ?? 'Water: $c',
+              titleBuilder: (c) => loc.goalWaterTitle.call(c) ?? 'Water: $c',
               unitText: loc.waterUnit ?? 'glasses',
             ),
             _buildGoalRow(
               loc: loc,
               goalKey: 'steps',
               controller: _stepsCtrl,
-              titleBuilder: (c) => loc.goalStepsTitle?.call(c) ?? 'Steps: $c',
+              titleBuilder: (c) => loc.goalStepsTitle.call(c) ?? 'Steps: $c',
               unitText: loc.stepsUnit ?? 'steps',
             ),
             _buildGoalRow(
               loc: loc,
               goalKey: 'sleep',
               controller: _sleepCtrl,
-              titleBuilder: (c) => loc.goalSleepTitle?.call(c) ?? 'Sleep: $c',
+              titleBuilder: (c) => loc.goalSleepTitle.call(c) ?? 'Sleep: $c',
               unitText: loc.sleepUnit ?? 'hours',
             ),
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: _saveGoals,
-              child: Text(loc.save),
               style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 12)),
+              child: Text(loc.save),
             ),
           ],
         ),
