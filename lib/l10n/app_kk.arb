@@ -1,0 +1,115 @@
+{
+  "@@locale": "kk",
+
+  "water": "Су",
+  "@water": { "description": "Су көрсеткіші" },
+  "sleep": "Ұйқы",
+  "@sleep": { "description": "Ұйқы көрсеткіші" },
+  "calories": "Калориялар",
+  "@calories": { "description": "Калория көрсеткіші" },
+
+  "settings": "Параметрлер",
+  "@settings": { "description": "Параметрлер экраны" },
+  "theme": "Тақырып",
+  "@theme": { "description": "Тақырып таңдау" },
+  "darkMode": "Қараңғы режим",
+  "@darkMode": { "description": "Қараңғы режим" },
+  "lightMode": "Жарық режимі",
+  "@lightMode": { "description": "Жарық режимі" },
+
+  "language": "Тіл",
+  "@language": { "description": "Тіл таңдау" },
+  "home": "Басты бет",
+  "@home": { "description": "Төменгі навигация: Басты бет" },
+  "statistics": "Статистика",
+  "@statistics": { "description": "Төменгі навигация: Статистика" },
+  "challenges": "Челлендждер",
+  "@challenges": { "description": "Төменгі навигация және экран: Челлендждер" },
+  "achievements": "Жетістіктер",
+  "@achievements": { "description": "Төменгі навигация: Жетістіктер" },
+  "profile": "Профиль",
+  "@profile": { "description": "Төменгі навигация: Профиль" },
+
+  "notifications": "Хабарламалар",
+  "@notifications": { "description": "Хабарламаларды қосу/өшіру" },
+  "resetSettings": "Параметрлерді қалпына келтіру",
+  "@resetSettings": { "description": "Параметрлерді әдепкіге қайтару" },
+  "version": "Нұсқа",
+  "@version": { "description": "Қолданба нұсқасы" },
+  "logout": "Шығу",
+  "@logout": { "description": "Шығу түймесі" },
+
+  "name": "Аты",
+  "@name": { "description": "Пайдаланушының аты" },
+  "enterName": "Атыңызды енгізіңіз",
+  "@enterName": { "description": "Атын енгізу диалогы" },
+  "cancel": "Болдырмау",
+  "@cancel": { "description": "Болдырмау түймесі" },
+  "save": "Сақтау",
+  "@save": { "description": "Сақтау түймесі" },
+
+  "editGoals": "Мақсаттарды өзгерту",
+  "@editGoals": { "description": "Челлендж мақсаттарын өзгерту" },
+
+  "goodMorning": "Қайырлы таң,",
+  "@goodMorning": { "description": "Сәлемдесу" },
+  "dailySummary": "Күнделікті шолу",
+  "@dailySummary": { "description": "Бөлім атауы" },
+  "cups": "стақан",
+  "@cups": { "description": "Стакан бірлігі" },
+  "hours": "сағат",
+  "@hours": { "description": "Сағат бірлігі" },
+
+  "nameNotSet": "Аты көрсетілмеген",
+  "@nameNotSet": { "description": "Пайдаланушы аты көрсетілмеген кездегі мәтін" },
+  "nameUpdated": "Аты сәтті жаңартылды!",
+  "@nameUpdated": { "description": "Атын сәтті жаңартқаннан кейінгі хабарлама" },
+  "confirmResetSettings": "Барлық параметрлерді әдепкі мәндеріне қалпына келтіргіңіз келетініне сенімдісіз бе?",
+  "@confirmResetSettings": { "description": "Параметрлерді қалпына келтіруді растау хабарламасы" },
+  "reset": "Қалпына келтіру",
+  "@reset": { "description": "Қалпына келтіруді растау түймесі" },
+  "settingsReset": "Параметрлер қалпына келтірілді!",
+  "@settingsReset": { "description": "Параметрлер қалпына келтірілгеннен кейінгі хабарлама" },
+  "confirmLogout": "Шыққыңыз келетініне сенімдісіз бе?",
+  "@confirmLogout": { "description": "Шығуды растау хабарламасы" },
+  "goalsUpdated": "Мақсаттар сәтті жаңартылды!",
+  "@goalsUpdated": { "description": "Мақсаттар жаңартылғаннан кейінгі хабарлама" },
+
+  "waterUnit": "стақан",
+  "@waterUnit": { "description": "Су мақсатының бірлігі, мысалы, 8 стақан" },
+  "stepsUnit": "қадам",
+  "@stepsUnit": { "description": "Қадам мақсатының бірлігі, мысалы, 10000 қадам" },
+  "sleepUnit": "сағат",
+  "@sleepUnit": { "description": "Ұйқы мақсатының бірлігі, мысалы, 8 сағат" },
+
+  "goalWaterTitle": "{count} стақан су ішу",
+  "@goalWaterTitle": {
+    "description": "Су мақсатының атауы, {count} орнына сан қойылады",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "8"
+      }
+    }
+  },
+  "goalStepsTitle": "{count} қадам жүру",
+  "@goalStepsTitle": {
+    "description": "Қадам мақсатының атауы, {count} орнына сан қойылады",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "10000"
+      }
+    }
+  },
+  "goalSleepTitle": "{count} сағат ұйықтау",
+  "@goalSleepTitle": {
+    "description": "Ұйқы мақсатының атауы, {count} орнына сан қойылады",
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "8"
+      }
+    }
+  }
+}
